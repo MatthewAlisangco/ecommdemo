@@ -1,22 +1,112 @@
-.App {
-  text-align: center;
+
+.app {
+  display: grid;
+  grid-template:
+          [header-left] "header header header header header header " 50px [header-right]
+          [jmbo-left]   ". hdjmbo hdjmbo hdjmbo hdjmbo ." 2fr  [jmbo-right]
+          [main-left]   "nav nav article article article ." 1fr [main-right]
+          [footer-left] "footer footer footer footer footer footer" 1fr [footer-right]
+/ 80px 150px 1fr 1fr 1fr 80px;
+
+  /*grid-template-rows: 80px 1fr 70px;*/
+  /*grid-template-columns: 20% 1fr 15%;*/
+    /*grid-template-rows: repeat(4, [row-start] 1fr [row-end]);*/
+    /*grid-template-columns: repeat(6, [col-start] 1fr [col-end]);*/
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  height: 100vh;
+  margin: 0;
+}
+header, footer, article, nav  {
+  padding: 1.2em;
+  background: #1B263F;
 }
 
-.App-logo {
-  height: 40vmin;
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.header-jumbo {
+    /*grid-row: 1;*/
+    /*grid-column: span 1;*/
+    grid-area: hdjmbo;
+    background: green;
 }
 
-.App-link {
-  color: #09d3ac;
+#pageHeader {
+  grid-area: header;
+}
+#pageFooter {
+  grid-area: footer;
+}
+#mainArticle {
+  grid-area: article;
+}
+#mainNav {
+  grid-area: nav;
+}
+
+/*Article grid*/
+#inner-grid {
+  display: grid;
+    /*grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); !* see notes below *!*/
+    /*grid-auto-rows: minmax(200px, auto);*/
+    /*grid-gap: 1rem;*/
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+
+
+
+
+
+}
+
+/*https://codepen.io/abbeyjfitzgerald/pen/QaeoYj*/
+#inner-grid > div {
+  background: lightgreen;
+  /*padding: 8px;*/
+
+    /*border: 2px solid #e7e7e7;*/
+    /*border-radius: 4px;*/
+    /*padding: .5rem;*/
+    /*-webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);*/
+    /*box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);*/
+    /*display: flex;*/
+    /*!* -webkit-box-orient: vertical; *!*/
+    /*!* -webkit-box-direction: normal; *!*/
+    /*-ms-flex-direction: column;*/
+    /*flex-direction: column;*/
+    /*position: relative;*/
+    /*color: #5d5e5e;*/
+
+}
+
+/*footer grid*/
+#footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+#footer-grid > div {
+  background: lightgreen;
+  padding: 8px;
+}
+
+@media all and (max-width: 575px) {
+  /*body {*/
+    /*background-color: red;*/
+  /*}*/
+
+
+  .app {
+    grid-template-areas: "header" "article" "nav" "footer";
+    /*grid-template-rows: 80px 1fr 70px 1fr 70px;*/
+    grid-template-columns: 1fr;
+  }
+
+
 }
