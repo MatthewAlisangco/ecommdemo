@@ -84,7 +84,13 @@ header {
     /*color: #5d5e5e;*/
 
 }
+div.image {
+    content:url(http://placehold.it/350x250);
+}​
 
+div.banner {
+     content:url(http://placehold.it/750x250);
+ }
 /*footer grid*/
 #footer-grid {
   display: grid;

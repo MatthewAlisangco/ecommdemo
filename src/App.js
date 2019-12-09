@@ -8,21 +8,29 @@ function App() {
         <header id="pageHeader">Header
         Women
         Men Children Eyewear watches jewellery</header>
-        <div class="header-jumbo"> </div>
+        <div class="header-jumbo">
+        <div class="banner">
+
+        </div></div>
 
         <article id="mainArticle">Article
             <div id="inner-grid">
-                <div>1
+                <div className = "card">1
+                    <div class="image"></div>​
                     <div className="text">
                         <h3>Seamlessly visualize quality</h3>
                         <p>Collaboratively administrate empowered markets via plug-and-play networks.</p>
                         <button>Here's why</button>
                     </div></div>
-                <div>2     <div className="text">
+                <div>2
+
+                    {/*<div className="image"></div>*/}
+                    <div className="text">
                     <h3>Seamlessly visualize quality</h3>
                     <p>Collaboratively administrate empowered markets via plug-and-play networks.</p>
                     <button>Here's why</button>
-                </div> </div>
+                </div>
+                </div>
                 <div>3     <div className="text">
                     <h3>Seamlessly visualize quality</h3>
                     <p>Collaboratively administrate empowered markets via plug-and-play networks.</p>
