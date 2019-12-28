@@ -1,17 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
+
 import './App.css';
+import Header from './Components/header/Header.js';
 
 function App() {
   return (
     <div className="app">
-        <header id="pageHeader">Header
-        Women
-        Men Children Eyewear watches jewellery</header>
-        <div class="header-jumbo">
-        <div class="banner">
-
-        </div></div>
+    <Header/>
 
         <article id="mainArticle">Article
             <div id="inner-grid">
