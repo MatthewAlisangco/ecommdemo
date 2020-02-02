@@ -5,7 +5,11 @@ import React, { Component } from 'react';
 // require('./styles.scss'); styles
 // import { Link } from 'react-router-dom'
 
-class Header extends React.Component {
+class Navigator extends React.Component {
+
+    // let itemscategory = 0;
+
+
     render() {
 
         //if passin womans
@@ -15,12 +19,15 @@ class Header extends React.Component {
         // if womans/shoes/1
         return (
 
-                <header id="pageHeader">Header
-                    Women
-                    Men Children Eyewear watches jewellery
-                </header>
+            <nav id="mainNav">Nav
+                <li> stuff</li>
+
+
+
+
+            </nav>
 
         );
     }
 }
-export default Header;
+export default Navigator;
