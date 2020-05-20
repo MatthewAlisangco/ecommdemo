@@ -10,9 +10,15 @@ import * as serviceWorker from './serviceWorker';
 // import rootReducer from "./reducers/reducer";
 // import configureStore from "./redux/StoreConfiguration";
 import rootReducer from "./redux/reducers/reducer";
+import {ItemsFilter} from "./redux/actions/ActionTypes";
+import {womansitems} from "./resources/mockData";
 // 8
 //
 const store = createStore(rootReducer);
+// const initialState = {
+//     ItemsType: ItemsFilter.WOMAN_ITEMS,
+//     payload: womansitems
+// };
 ReactDOM.render(  <Provider store={store}>
     <App />
 </Provider>, document.getElementById('root'));

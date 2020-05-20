@@ -1,13 +1,6 @@
 
-import React, { Component } from 'react';
+import React from 'react';
 import connect from "react-redux/es/connect/connect";
-import {DisplayItem} from "../../redux/actions/genderaction";
-import {ItemsFilter} from "../../redux/actions/ActionTypes";
-import {womansitems} from "../../resources/mockData";
-// let React = require('react/addons');
-// let classNames = require('classnames');
-// require('./styles.scss'); styles
-// import { Link } from 'react-router-dom'
 
 class DisplayItems extends React.Component {
 
@@ -22,6 +15,14 @@ class DisplayItems extends React.Component {
 
             <div id="">shit
                 <p>{this.props.items} </p>
+
+                {/*<ul className="todo-list">*/}
+                    {/*{this.props.items && this.props.items.length*/}
+                        {/*? this.props.items.map((toitemdo, index) => {*/}
+                            {/*return <Todo key={`todo-${todo.id}`} todo={todo} />;*/}
+                        {/*})*/}
+                        {/*: "No todos, yay!"}*/}
+                {/*</ul>*/}
 
 
 

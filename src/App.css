@@ -3,9 +3,9 @@
   display: grid;
   grid-template:
           [header-left] "header header header header header header " 50px [header-right]
-          [jmbo-left]   ". hdjmbo hdjmbo hdjmbo hdjmbo ." 2fr  [jmbo-right]
+          [jmbo-left]   ". hdjmbo hdjmbo hdjmbo hdjmbo ." 1fr  [jmbo-right]
           [main-left]   "nav nav article article article ." 1fr [main-right]
-          [footer-left] "footer footer footer footer footer footer" 1fr [footer-right]
+          [footer-left] "footer footer footer footer footer footer" 0.2fr [footer-right]
 / 80px 150px 1fr 1fr 1fr 80px;
 
   /*grid-template-rows: 80px 1fr 70px;*/

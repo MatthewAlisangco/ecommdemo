@@ -3,13 +3,13 @@ import {ItemsFilter} from "../actions/ActionTypes";
 import {menitems, womansitems} from "../../resources/mockData";
 
 
-const initialState = {
-        ItemsType: ItemsFilter.WOMAN_ITEMS,
-        payload: womansitems
-};
-
-export default function showItemsReducer (state = [], action)
-{
+// const initialState = {
+//         ItemsType: ItemsFilter.WOMAN_ITEMS,
+//         payload: womansitems
+// };
+// https://dev.to/markusclaus/fetching-data-from-an-api-using-reactredux-55ao
+export default function showItemsReducer (state = [], action) {
+    console.log("action", action, state);
     switch (action.type) {
 
         case ItemsFilter.MENS_ITEM:
@@ -30,9 +30,8 @@ export default function showItemsReducer (state = [], action)
 
         default:
             return state
-
-
     }
 }
 
 
+//size , color

@@ -33,30 +33,22 @@ class Header extends React.Component {
         return (
 
                 <header id="pageHeader">
-
-                    {/*<button className="add-todo" onClick={this.handleAddTodo()}>*/}
-                        {/*Add Todo*/}
-                    {/*</button>*/}
-
+                    <div id="icon"> <button onClick={() => this.handleItemsType(ItemsFilter.MENS_ITEM)}> Icon</button> </div>
+                    <div id="itembox">
                     <button onClick={() => this.handleItemsType(ItemsFilter.MENS_ITEM)}> Men</button>
 
                     <button onClick={() => this.handleItemsType(ItemsFilter.WOMAN_ITEMS)}>Woman</button>
                     <button onClick={() => this.handleItemsType(ItemsFilter.KIDS_ITEMS)}>Kids</button>
-
-                    Header
-                    Women
-                    Men Children Eyewear watches jewellery
+                </div>
+                    <div id="usernamebox">
+                        <div id="icon"> <button onClick={() => this.handleItemsType(ItemsFilter.MENS_ITEM)}> username</button> </div>
+                    </div>
                 </header>
 
         );
     }
 
 }
-
-const mapStateToProps = state => {
-    return { displayItemsFilter: state.displayItemsFilter,
-        genderItems: state.genderItems};
-};
 
 export default connect(
     null,
