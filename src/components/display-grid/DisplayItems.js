@@ -4,6 +4,15 @@ import connect from "react-redux/es/connect/connect";
 
 class DisplayItems extends React.Component {
 
+    renderList(){
+        return this.props.items.map((items) => {
+            return (
+                <li key={items} className="items-container"> items </li>
+            );
+        });
+
+    }
+
     render() {
 
         //if passin womans
@@ -11,32 +20,33 @@ class DisplayItems extends React.Component {
         //if passin womans/shoes
         // go womans/shoes
         // if womans/shoes/1
+            if(!this.props.items){
+            return <div> nothing </div>;
+        }
+
         return (
+            <div id="inner-grid">
+                {this.props.items.map(items =>
+                    <div className ="card">
+                        <div className="card-img">
+                        <img className="image" src="http://placehold.it/350x250" alt="placeholder"></img>
+                        </div>
 
-            <div id="">shit
-                <p>{this.props.items} </p>
+                        <div className="card-text"> {items}
+                        </div>
 
-                {/*<ul className="todo-list">*/}
-                    {/*{this.props.items && this.props.items.length*/}
-                        {/*? this.props.items.map((toitemdo, index) => {*/}
-                            {/*return <Todo key={`todo-${todo.id}`} todo={todo} />;*/}
-                        {/*})*/}
-                        {/*: "No todos, yay!"}*/}
-                {/*</ul>*/}
-
-
+                </div>)}
 
             </div>
 
         );
     }
 }
+
 const mapStateToProps = state => {
     // this.props = state.payload;
     console.log("states", state)
     return  { items : state.showItemsReducer.payload};
 };
-
-// export default DisplayItems;
 
 export default connect(mapStateToProps)(DisplayItems);

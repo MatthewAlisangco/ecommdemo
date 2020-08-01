@@ -8,12 +8,13 @@ import {menitems, womansitems} from "../../resources/mockData";
 //         payload: womansitems
 // };
 // https://dev.to/markusclaus/fetching-data-from-an-api-using-reactredux-55ao
-export default function showItemsReducer (state = [], action) {
+export default function ProductFilter (state = [], action) {
     console.log("action", action, state);
     switch (action.type) {
 
         case ItemsFilter.MENS_ITEM:
             console.log("Mens");
+            let filteredbyname
             return Object.assign({}, state, { payload: menitems })
 
         case ItemsFilter.WOMAN_ITEMS:
