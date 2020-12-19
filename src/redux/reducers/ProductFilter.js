@@ -1,33 +1,42 @@
-import {ItemsFilter} from "../actions/ActionTypes";
+import {FILTER_BRAND} from "../actions/ActionTypes";
 
-import {menitems, womansitems} from "../../resources/mockData";
+import {itemx, menitems, womansitems} from "../../resources/mockData";
 
 
 // const initialState = {
 //         ItemsType: ItemsFilter.WOMAN_ITEMS,
 //         payload: womansitems
 // };
+
+//https://stackoverflow.com/questions/44412242/how-can-i-apply-multiple-filters-in-react
 // https://dev.to/markusclaus/fetching-data-from-an-api-using-reactredux-55ao
 export default function ProductFilter (state = [], action) {
-    console.log("action", action, state);
+    // console.log("action", action, state);
+
     switch (action.type) {
 
-        case ItemsFilter.MENS_ITEM:
-            console.log("Mens");
-            let filteredbyname
-            return Object.assign({}, state, { payload: menitems })
+        case FILTER_BRAND.FILTER_BRAND:
+            console.log("filtering");
+            let newload = action.payload
+            return Object.assign({}, state, {filterbyBrand: newload})
+            //old
+            // if(action.payload) {
+            //     let i = 0
+            //     let newload = [];
+            //     while (i < action.payload.length) {
+            //
+            //         if (action.payload[i] == itemx.brand) {
+            //             newload.push(itemx[i])
+            //         }
+            //     }
+            //
+            //
+            //     return Object.assign({}, state, {filterbyBrand: newload})
+            // }
+            // else {
+            //     return Object.assign({}, state, {filteritems: itemx})
+            // }
 
-        case ItemsFilter.WOMAN_ITEMS:
-            console.log("Woman");
-            return Object.assign({}, state, { payload: womansitems })
-
-        case ItemsFilter.KIDS_ITEMS:
-            console.log("Kids");
-            return Object.assign({}, state, { payload: menitems})
-
-        case ItemsFilter.NONE:
-            console.log("none");
-            return Object.assign({}, state, { payload: null} )
 
         default:
             return state

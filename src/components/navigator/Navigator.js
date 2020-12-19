@@ -1,128 +1,75 @@
-
 import React, { Component } from 'react';
 import connect from "react-redux/es/connect/connect";
-// let React = require('react/addons');
-// let classNames = require('classnames');
-// require('./styles.scss'); styles
-// import { Link } from 'react-router-dom'
+import {addToBrandFilterList} from "../../redux/actions/ActionCreators";
 
 
-//filternavigator
 class Navigator extends React.Component {
-
-    // let itemscategory = 0;
-    //get items by brand arrays.filter(brandname)
-    //["nike", "addidas", "gap", "nike", "addidas", "gap"]
-    //create hashset of all brands
-    //view item by brand
-    //
+    filterlist = new Set();
     constructor(props) {
+        // this.thefilterlist = new Set();
         super(props);
-
-        this.state = {
-            isGoing: true,
-            numberOfGuests: 2
-        };
-
-        this.handleInputChange = this.handleInputChange.bind(this);
-    }
-
-
-    filterbyBrand(){
-        let brandfilter = [];
-
-        //if brand is checkmarked
-        //return list with brand
-        //if brand is unchecked
-        //return list without brand
-        // var marvelHeroes =  heroes.filter(function(hero) {
-        //     return hero.franchise == “Marvel”;
-        // });
+        this.handleChange = this.handleChange.bind(this);
+        this.thefilterlist = new Set();
 
     }
+    //
+    // handleItemsType = (itemtype) => {
+    //     this.props.DisplayItem(itemtype);
+    // }
 
     handleChange(e) {
         let isChecked = e.target.checked;
+        let value = e.target.value
+        // console.log("state" + this.props.items)
         console.log("isChecked" , e.target.checked, e.target.value)
+        // console.log(this.filterbyBrand())
+        // let filterlist = new Set();
+        if(isChecked){
+            this.filterlist.add(value);
+        }
+        if(this.filterlist.has(value) && !isChecked){
+            this.filterlist.delete(value);
+        }
+        let thefilterlist = null
+        thefilterlist =Array.from(this.filterlist)
+        this.props.addToBrandFilterList(thefilterlist)
+        // this.thefilterlist = filterlist
+        console.log(this.filterlist)
     }
-
-    handleInputChange(event) {
-        const target = event.target;
-        const value = target.type === 'checkbox' ? target.checked : target.value;
-        const name = target.name;
-        console.log(value);
-        this.setState({
-            [name]: value
-        });
-    }
-
-
 
     render() {
-
-        //if passin womans
-        //go to womans component
-        //if passin womans/shoes
-        // go womans/shoes
-        // if womans/shoes/1
-        if(!this.props.items){
-            return   <nav id="mainNav">Nav
+        let brandsSet = new Set();
+        if(!this.props.inventory.items){
+            return <nav id="mainNav">Nav
                 <li> Brand</li>
-
                 <li> Price</li>
-
-
-
-
                 <li> Style</li>
+            </nav>;
+        }
 
-
-            </nav>
-
-                ;
+        if(this.props.inventory.items){
+            for(let i =0 ; i < this.props.inventory.items.length ; i++) {
+                brandsSet.add(this.props.inventory.items[i].Brand);
+            }
+            brandsSet = Array.from(brandsSet)
         }
         return (
-
             <nav id="mainNav">Nav
                 <li> Brand</li>
-                {this.props.items.map(items =>
+                {brandsSet.map(brandName =>
                     <div className ="card">
-                        <div className="card-text">
-
-                            <input
-                                name="isGoing"
-                                type="checkbox"
-                                value={items}
-                                onChange={this.handleChange} />
-                            {items}
-                        </div>
-
+                        <input
+                            name="isGoing"
+                            type="checkbox"
+                            value={brandName}
+                            onChange={this.handleChange} />
+                        {brandName}
                     </div>)}
-
-                {/*<form>*/}
-                    {/*<label>*/}
-                        {/*Brand Names:*/}
-
-
-                        {/*<input*/}
-                            {/*name="isGoing"*/}
-                            {/*type="checkbox"*/}
-                            {/*checked={this.state.isGoing}*/}
-                            {/*onChange={this.handleInputChange} />*/}
-                    {/*</label>*/}
-
-                {/*</form>*/}
                 <li> Price</li>
-
-
-
 
                 <li> Style</li>
 
-
-            </nav>
-
-        );
+            </nav>);
     }
 
 }
@@ -130,12 +77,12 @@ class Navigator extends React.Component {
 const mapStateToProps = state => {
     // this.props = state.payload;
     console.log("states", state)
-    return  { items : state.showItemsReducer.payload};
+    return  { inventory : state.items};
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        filterByBrandName: (brandid) => {dispatch({type:'FILTER_BRAND', filterByBrandName: brandid})}
-    }
-};
-export default connect(mapStateToProps)(Navigator);
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         addToBrandFilterList: () => {dispatch(addToBrandFilterList())}
+//     }
+// };
+export default connect(mapStateToProps, {addToBrandFilterList})(Navigator);

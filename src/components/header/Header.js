@@ -10,20 +10,13 @@ class Header extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            ItemsType: ItemsFilter.WOMAN_ITEMS,
-            payload: womansitems
-        };
     }
 
     handleItemsType = (itemtype) => {
-        //     this.props.displayItemsFilter()
-        // }
         this.props.DisplayItem(itemtype);
     }
 
     render() {
-
         //pass gendercategory
         //if passin womans
         //go to womans component
@@ -36,7 +29,6 @@ class Header extends React.Component {
                     <div id="icon"> <button onClick={() => this.handleItemsType(ItemsFilter.MENS_ITEM)}> Icon</button> </div>
                     <div id="itembox">
                     <button onClick={() => this.handleItemsType(ItemsFilter.MENS_ITEM)}> Men</button>
-
                     <button onClick={() => this.handleItemsType(ItemsFilter.WOMAN_ITEMS)}>Woman</button>
                     <button onClick={() => this.handleItemsType(ItemsFilter.KIDS_ITEMS)}>Kids</button>
                 </div>
@@ -50,7 +42,4 @@ class Header extends React.Component {
 
 }
 
-export default connect(
-    null,
-    { DisplayItem }
-)(Header);
+export default connect(null,{ DisplayItem })(Header);

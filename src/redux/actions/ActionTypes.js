@@ -5,3 +5,6 @@ export const ItemsFilter = {
     KIDS_ITEMS: 'KIDS_ITEMS',
 }
 
+export const FILTER_BRAND = {
+    FILTER_BRAND : 'FILTER_BRAND'
+}
