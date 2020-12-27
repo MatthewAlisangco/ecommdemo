@@ -44,4 +44,24 @@ export default function ProductFilter (state = [], action) {
 }
 
 
-//size , color
+//size , color, brand
+//
+// colorFilterChanged: {
+//     reducer(state, action) {
+//         let { color, changeType } = action.payload
+//         const { colors } = state
+//         switch (changeType) {
+//             case 'added': {
+//                 if (!colors.includes(color)) {
+//                     colors.push(color)
+//                 }
+//                 break
+//             }
+//             case 'removed': {
+//                 state.colors = colors.filter(
+//                     (existingColor) => existingColor !== color
+//                 )
+//             }
+//             default:
+//                 return
+//         }

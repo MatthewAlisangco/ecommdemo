@@ -3,7 +3,8 @@
 //     itemslist:[ ]
 // };
 
-//
+//user types:
+// guest, registerduser
 // export const initialState = {
 //     username: null,
 //     itemslist:[],

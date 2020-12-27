@@ -8,3 +8,9 @@ export const ItemsFilter = {
 export const FILTER_BRAND = {
     FILTER_BRAND : 'FILTER_BRAND'
 }
+
+
+// export const FILTER_BRAND = {
+//     FILTER_ADD : 'FILTER_ADD',
+//     FILTER_REMOVE : 'FILTER_REMOVE'
+// }
