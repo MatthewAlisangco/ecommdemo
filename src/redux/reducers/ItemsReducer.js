@@ -6,18 +6,9 @@ import {menitems, womansitems, itemx} from "../../resources/mockData";
 // https://dev.to/markusclaus/fetching-data-from-an-api-using-reactredux-55ao
 
 
-const selectedBrands = state => state.items.filterbyBrand
-const getItems = state => state.items;
 
-// export const getItemByBrand = createSelector([selectedBrands,getItems]),
-//     ()
-
-
-
-
-
-export default function showItemsReducer (state = [], action) {
-    console.log("action", action, state);
+export default function showItemsReducer (state =[] , action) {
+    // console.log("action", action, state);
     switch (action.type) {
 
         case ItemsFilter.MENS_ITEM:

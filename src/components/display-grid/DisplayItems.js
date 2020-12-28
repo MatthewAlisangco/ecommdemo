@@ -1,7 +1,8 @@
 
 import React from 'react';
 import connect from "react-redux/es/connect/connect";
-
+import {selectFilteredInventory} from "../../selectors/selected_brands";
+// import selectFilteredInventory from '../selectors'
 class DisplayItems extends React.Component {
 
     renderList(){
@@ -14,13 +15,12 @@ class DisplayItems extends React.Component {
     }
 
     brandfilter() {
-        let temp = this.props.brandName.filterbyBrand
-        console.log('sdfsdf', temp)
         let i = 0
         let j = 0
         let newload = []
-        if(!this.props.brandName.filterbyBrand){
-            // "nothing"
+        if(!this.props.brandName.filterbyBrand || this.props.brandName.filterbyBrand.length == 0){
+           newload = this.props.inventory.items
+            console.log("load" , newload)
         }
         else {
             while (i < this.props.brandName.filterbyBrand.length) {
@@ -30,41 +30,14 @@ class DisplayItems extends React.Component {
                     }
                     j++;
                 }
+                if(j == this.props.inventory.items.length){
+                    j=0
+                }
                 i++;
-
             }
             console.log("load" , newload)
         }
     }
-
-    // filterbyBrand(){
-    //     //grand brand from state, filter items here
-    //     let i = 0;
-    //     let j = 0;
-    //     let newload = []
-    //     if(!this.props.brandName.filterbyBrand) {
-    //         // return "empty"
-    //     }
-    //     else {
-    //         while (i < action.payload.length) {
-    //             while (j < state.payload.length) {
-    //                 if (action.payload[i] == state.payload[j].Brand) {
-    //                     newload.push(state.payload[j])
-    //                 }
-    //                 j++;
-    //             }
-    //             i++;
-    //
-    //         }
-    //         console.log("load" , newload)
-    //     }
-    //                     // for(int
-    //                     //     state.payload[i].Brand
-    //                 // if(action.payload[i] == state.payload[i].Brand){
-    //                 //     newload.push(state.payload[i])
-    //                 // }
-    //                 // i++;
-    // }
 
     render() {
         console.log("shit" ,this.props.inventory.items)
@@ -127,7 +100,7 @@ class DisplayItems extends React.Component {
 const mapStateToProps = state => {
     // this.props = state.payload;
     console.log("states", state)
-    return  { inventory : state.items,
+    return  { inventory : selectFilteredInventory(state),
                brandName: state.filterbyBrand };
 };
 
