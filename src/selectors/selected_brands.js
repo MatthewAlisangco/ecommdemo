@@ -21,23 +21,6 @@ export const selectFilteredInventory = createSelector(
         else {
             return inventory
         }
-        // if (inventory == null || undefined) {
-        //     return inventory
-        // }
-        //
-        // return inventory.items.filter((item) => {
-        //     if(brands == null || undefined){
-        //         return inventory.items;
-        //     }
-        // const brandmatches = brands.length === 0 || item.items.includes(brands)
-        // return brandmatches
-        //     // inventory.items["0"].Brand === "Nike")
-        // // return Object.values.selectedInventory.filter((item) => {
-        // //     // const statusMatches =
-        // //     //     showAllCompletions || todo.completed === completedStatus
-        // //     const brandmatches = selectedBrands.length === 0 || item.includes(selectedBrands)
-        // //     return brandmatches
-        // })
     })
 
 

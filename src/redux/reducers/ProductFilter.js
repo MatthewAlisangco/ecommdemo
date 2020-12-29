@@ -18,33 +18,22 @@ export default function ProductFilter (state = [], action) {
             console.log("filtering");
             let newload = action.payload
             return Object.assign({}, state, {filterbyBrand: newload})
-            //old
-            // if(action.payload) {
-            //     let i = 0
-            //     let newload = [];
-            //     while (i < action.payload.length) {
-            //
-            //         if (action.payload[i] == itemx.brand) {
-            //             newload.push(itemx[i])
-            //         }
-            //     }
-            //
-            //
-            //     return Object.assign({}, state, {filterbyBrand: newload})
-            // }
-            // else {
-            //     return Object.assign({}, state, {filteritems: itemx})
-            // }
 
-
+//             case 'added': {
+//                 if (!colors.includes(color)) {
+//                     colors.push(color)
+//                 }
+//                 break
+//             }
+//             case 'removed': {
+//                 state.colors = colors.filter(
+//                     (existingColor) => existingColor !== color
+//                 )
+//             }
         default:
             return state
     }
 }
-
-
-
-
 
 //size , color, brand
 //

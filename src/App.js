@@ -19,7 +19,7 @@ function App() {
             {/*</div>*/}
         </article>
 
-        <footer id="pageFooter">Footer
+        <footer id="pageFooter" style={{color:"white"}}>Footer © Matthew Alisangco
             <div id="footer-grid">
 
             </div> </footer>

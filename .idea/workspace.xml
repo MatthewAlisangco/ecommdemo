@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7bda3d5b-1686-4b3d-a464-db82154575bb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/display-grid/DisplayItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/display-grid/DisplayItems.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/ItemsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/ItemsReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/reducers/ProductFilter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/ProductFilter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/selectors/selected_brands.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/selectors/selected_brands.js" afterDir="false" />
     </list>
@@ -146,7 +148,7 @@
       <workItem from="1605552234036" duration="6656000" />
       <workItem from="1606182913891" duration="7059000" />
       <workItem from="1607657083711" duration="13968000" />
-      <workItem from="1608171562017" duration="45194000" />
+      <workItem from="1608171562017" duration="46054000" />
     </task>
     <servers />
   </component>
@@ -317,7 +319,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/redux/reducers/ItemsReducer.js</url>
-          <line>31</line>
+          <line>26</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -327,28 +329,10 @@
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/selectors/selected_brands.js</url>
-          <line>34</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/display-grid/DisplayItems.js</url>
           <line>25</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/selectors/selected_brands.js</url>
-          <line>27</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/selectors/selected_brands.js</url>
-          <line>23</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/selectors/selected_brands.js</url>
@@ -370,13 +354,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/display-grid/DisplayItems.js</url>
-          <line>42</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/display-grid/DisplayItems.js</url>
-          <line>58</line>
+          <line>50</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="56" />
         </line-breakpoint>
@@ -388,7 +366,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/display-grid/DisplayItems.js</url>
-          <line>102</line>
+          <line>75</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="58" />
         </line-breakpoint>

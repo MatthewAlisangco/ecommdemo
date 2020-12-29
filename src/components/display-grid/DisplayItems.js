@@ -40,21 +40,13 @@ class DisplayItems extends React.Component {
     }
 
     render() {
-        console.log("shit" ,this.props.inventory)
-        //if passin womans
-        //go to womans component
-        //if passin womans/shoes
-        // go womans/shoes
-        // if womans/shoes/1
-            if(!this.props.inventory){
+
+        if(!this.props.inventory){
             return <div> </div>;
         }
             // this.brandfilter()
         return (
             <div id="inner-grid">
-                {/*{this.props.inventory.items.map(item =>*/}
-                {/*    <li key={item.id}>{item.Brand}</li>*/}
-                {/*)}*/}
 
                 {this.props.inventory.map((items, key) =>
                     <div className ="card">
@@ -68,34 +60,15 @@ class DisplayItems extends React.Component {
                                 <div className="card-text" >{items.Title}
                                 <div className="card-text" > ${items.Price}
                                     </div>
-
                                 </div>
                             </div>
                         </div>
-
                     </div>)}
-                {/*{this.props.items.map((items, index) =>*/}
-                    {/*<div className ="card" key={index}>*/}
-                        {/*<div className="card-img">*/}
-                        {/*<img className="image" src="http://placehold.it/350x250" alt="placeholder"></img>*/}
-                        {/*</div>*/}
-
-                        {/*<div className="card-text"> {items}*/}
-                        {/*</div>*/}
-
-                {/*</div>)}*/}
-
             </div>
 
         );
     }
 }
-
-// const mapStateToProps = state => {
-//     // this.props = state.payload;
-//     console.log("states", state)
-//     return  { items : state.showItemsReducer.payload};
-// };
 
 const mapStateToProps = state => {
     // this.props = state.payload;
