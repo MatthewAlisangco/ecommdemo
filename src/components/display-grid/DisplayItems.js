@@ -40,23 +40,23 @@ class DisplayItems extends React.Component {
     }
 
     render() {
-        console.log("shit" ,this.props.inventory.items)
+        console.log("shit" ,this.props.inventory)
         //if passin womans
         //go to womans component
         //if passin womans/shoes
         // go womans/shoes
         // if womans/shoes/1
-            if(!this.props.inventory.items){
+            if(!this.props.inventory){
             return <div> </div>;
         }
-            this.brandfilter()
+            // this.brandfilter()
         return (
             <div id="inner-grid">
                 {/*{this.props.inventory.items.map(item =>*/}
                 {/*    <li key={item.id}>{item.Brand}</li>*/}
                 {/*)}*/}
 
-                {this.props.inventory.items.map((items, key) =>
+                {this.props.inventory.map((items, key) =>
                     <div className ="card">
                         <div className="card-img">
                             <img className="image" src="http://placehold.it/350x250" alt="placeholder"></img>

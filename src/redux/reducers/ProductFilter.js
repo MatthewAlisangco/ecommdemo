@@ -4,8 +4,7 @@ import {itemx, menitems, womansitems} from "../../resources/mockData";
 
 
 // const initialState = {
-//         ItemsType: ItemsFilter.WOMAN_ITEMS,
-//         payload: womansitems
+//     filterByBrand : []
 // };
 
 //https://stackoverflow.com/questions/44412242/how-can-i-apply-multiple-filters-in-react
