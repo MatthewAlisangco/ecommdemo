@@ -1,18 +1,27 @@
 
-import React from 'react';
+import React,  { useState }  from 'react';
 import connect from "react-redux/es/connect/connect";
 import {selectFilteredInventory} from "../../selectors/selected_brands";
+import ItemsModal from "./ItemsModal";
+// import styled from 'styled-components';
 // import selectFilteredInventory from '../selectors'
 class DisplayItems extends React.Component {
-
-    renderList(){
-        return this.props.items.map((items) => {
-            return (
-                <li key={items} className="items-container"> items </li>
-            );
-        });
-
+    constructor() {
+        super();
+        this.state = {
+            show: false
+        };
+        this.showModal = this.showModal.bind(this);
+        this.hideModal = this.hideModal.bind(this);
     }
+
+    showModal = () => {
+        this.setState({ show: true });
+    };
+
+    hideModal = () => {
+        this.setState({ show: false });
+    };
 
     brandfilter() {
         let i = 0
@@ -47,6 +56,21 @@ class DisplayItems extends React.Component {
             // this.brandfilter()
         return (
             <div id="inner-grid">
+                {/*<div>*/}
+                {/*<button onClick={openModal}>I'm a modal</button>*/}
+                {/*<ItemsModal showModal={showModal} setShowModal={setShowModal} />*/}
+                {/*    </div>*/}
+
+
+                <div>
+                    {/*<ItemsModal show={this.state.show} handleClose={this.hideModal}>*/}
+                    {/*    <p>Modal</p>*/}
+                    {/*</ItemsModal>*/}
+                    {/*<button type="button" onClick={this.showModal}>*/}
+                    {/*    Open*/}
+                    {/*</button>*/}
+
+                </div>
 
                 {this.props.inventory.map((items, key) =>
                     <div className ="card">
@@ -59,6 +83,19 @@ class DisplayItems extends React.Component {
                                 <div className="card-text" >{items.Style} </div>
                                 <div className="card-text" >{items.Title}
                                 <div className="card-text" > ${items.Price}
+                                    <ItemsModal show={this.state.show} handleClose={this.hideModal} key={key} item={items}>
+                                        {/*<div className="card-text" key={key}>*/}
+                                        {/*<div className="card-text" >{items.Brand} </div>*/}
+                                        {/*    <div className="card-text" >{items.Style} </div>*/}
+                                        {/*    <div className="card-text" >{items.Title} </div>*/}
+                                        {/*        <div className="card-text" > ${items.Price} </div>*/}
+                                        {/*</div>*/}
+                                    </ItemsModal>
+                                    <button type="button" onClick={this.showModal}>
+                                        Open
+                                    </button>
+
+
                                     </div>
                                 </div>
                             </div>

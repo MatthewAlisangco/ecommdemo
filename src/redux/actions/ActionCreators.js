@@ -8,3 +8,17 @@ export function addToBrandFilterList(list) {
         }
     }
 }
+
+export function searchByValue(value) {
+    if (value!=null) {
+        return {
+            type: 'SEARCH_BY_VALUE',
+            value: value
+        }
+    }
+}
+
+
+export function setCurrent(item) {
+    return { type: 'SET_CURRENT', item: item };
+}
