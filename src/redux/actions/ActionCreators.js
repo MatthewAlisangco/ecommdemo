@@ -18,7 +18,11 @@ export function searchByValue(value) {
     }
 }
 
+//modals
+export function setCurrent(item, boolean) {
+    return { type: 'SET_CURRENT', item: item , modaltoggle:boolean };
+}
 
-export function setCurrent(item) {
-    return { type: 'SET_CURRENT', item: item };
+export function closeCurrent(boolean) {
+    return {type: 'CLOSE_CURRENT_ITEM', modaltoggle: null};
 }
