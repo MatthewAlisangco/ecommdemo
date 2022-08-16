@@ -3,12 +3,12 @@
   display: grid;
 
     /* grid-template [row-name]  sizes/names "grid-area -> Nth grid-area " CSSUnit(fr/px/etc)   /  column sizes */
-  grid-template:
-          [header-left] "header header header header header header " 50px [header-right]
-          [jmbo-left]   ". hdjmbo hdjmbo hdjmbo hdjmbo ." 1fr  [jmbo-right]
+    grid-template:
+          [header-leftß] "header header header header header header " 50px [header-right]
+          [jmbo-left]   ". hdjmbo hdjmbo hdjmbo hdjmbo ." 200px  [jmbo-right]
           [main-left]   "nav nav article article article ." 1fr [main-right]
-          [footer-left] "footer footer footer footer footer footer" 0.2fr [footer-right]
-/ 80px 150px 1fr 1fr 1fr 80px;
+          [footer-left] "footer footer footer footer footer footer" 0.1fr [footer-right]
+/ 10px 150px 1fr 1fr 1fr 10px;
   /* grid-template */
   /*grid-template-rows: 80px 1fr 70px;*/
   /*grid-template-columns: 20% 1fr 15%;*/
@@ -100,7 +100,7 @@ div.image {
     /*http://via.placeholder.com/300*/
 
     /*content:url(http://placehold.it/350x250);*/
-}​
+}
 
 
 
