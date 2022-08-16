@@ -1,19 +1,17 @@
 
-import React from 'react';
+import React,  { useState }  from 'react';
 import connect from "react-redux/es/connect/connect";
 import {selectFilteredInventory} from "../../selectors/selected_brands";
+// import ItemsModal from "./ItemsModal";
+import {setCurrent, closeCurrent} from "../../redux/actions/ActionCreators";
+import ItemsModal from "./ItemsModal";
+// import styled from 'styled-components';
 // import selectFilteredInventory from '../selectors'
 class DisplayItems extends React.Component {
 
-    renderList(){
-        return this.props.items.map((items) => {
-            return (
-                <li key={items} className="items-container"> items </li>
-            );
-        });
-
+    constructor() {
+        super();
     }
-
     brandfilter() {
         let i = 0
         let j = 0
@@ -40,11 +38,10 @@ class DisplayItems extends React.Component {
     }
 
     render() {
-
         if(!this.props.inventory){
             return <div> </div>;
         }
-            // this.brandfilter()
+
         return (
             <div id="inner-grid">
 
@@ -55,15 +52,19 @@ class DisplayItems extends React.Component {
                         </div>
 
                         <div className="card-text" key={key}>
-                                <div className="card-text" >{items.Brand}
+                                <div className="card-text" >{items.Brand} </div>
                                 <div className="card-text" >{items.Style} </div>
-                                <div className="card-text" >{items.Title}
-                                <div className="card-text" > ${items.Price}
-                                    </div>
+                                <div className="card-text" >{items.Title} </div>
+                                <div className="card-text" > ${items.Price} </div>
+                                <div className="card-text" >
+                                    <ItemsModal/>
+                                <button type="button" onClick={ () => this.props.setCurrent(items,true)}>
+                                open
+                                </button>
                                 </div>
                             </div>
-                        </div>
-                    </div>)}
+                    </div>)
+                }
             </div>
 
         );
@@ -77,4 +78,10 @@ const mapStateToProps = state => {
                brandName: state.filterbyBrand };
 };
 
-export default connect(mapStateToProps)(DisplayItems);
+const mapDispatchToProps = (dispatch, ownProps, curritem) => {
+    return {
+        toggleItemModal: (curritem, bool) => setCurrent(curritem, bool)
+    }
+}
+
+export default connect(mapStateToProps, {setCurrent,closeCurrent})(DisplayItems);

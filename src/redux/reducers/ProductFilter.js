@@ -19,6 +19,9 @@ export default function ProductFilter (state = [], action) {
             let newload = action.payload
             return Object.assign({}, state, {filterbyBrand: newload})
 
+        case FILTER_BRAND.SEARCH_BY_VALUE:
+            console.log("SearchingByValue")
+
 //             case 'added': {
 //                 if (!colors.includes(color)) {
 //                     colors.push(color)

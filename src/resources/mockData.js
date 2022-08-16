@@ -1,7 +1,5 @@
-export const menitems = ["nike", "addidas", "gap", "nike", "addidas", "gap"]
-export const womansitems = ["victoriasecret", "chanel"]
 
-export const itemx =
+export const mockMens =
     [
             {"id": "12",
                 "Brand": "Nike",
@@ -25,6 +23,57 @@ export const itemx =
                 "Price" : "12.99"},
 
         ]
+
+export const mockWomans =
+    [
+        {"id": "12",
+            "Brand": "Nike",
+            "Style" : "Leggings",
+            "Title" : "Victory Training",
+            "Color" : "Black",
+            "Price" : "55.99"
+        },
+        {"id": "15",
+            "Brand": "Nike",
+            "Style" : "Shoes",
+            "Title" : "Nike Air Max 2090",
+            "Color" : "White",
+            "Price" : "150"
+        },
+        {"id": "10",
+            "Brand": "Free People",
+            "Style" : "Shirt",
+            "Title" : "Incognito",
+            "Color" : "Blue",
+            "Price" : "12.99"},
+
+    ]
+
+
+export const mockKids =
+    [
+        {"id": "12",
+            "Brand": "Nike",
+            "Style" : "Shirt",
+            "Title" : "Boys Run",
+            "Color" : "Black",
+            "Price" : "55.99"
+        },
+        {"id": "15",
+            "Brand": "Vans",
+            "Style" : "Shoes",
+            "Title" : "Old Skool",
+            "Color" : "White",
+            "Price" : "30.99"
+        },
+        {"id": "10",
+            "Brand": "Vans",
+            "Style" : "Shirt",
+            "Title" : "LUV 2 Skate",
+            "Color" : "Blue",
+            "Price" : "12.99"},
+
+    ]
 
 //
 // {"Products":[
