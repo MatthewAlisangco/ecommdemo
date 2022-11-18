@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7bda3d5b-1686-4b3d-a464-db82154575bb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/display-grid/DisplayItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/display-grid/DisplayItems.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/display-grid/ItemsModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/display-grid/ItemsModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navigator/Navigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigator/Navigator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
