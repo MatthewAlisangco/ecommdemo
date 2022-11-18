@@ -12,13 +12,10 @@ import * as serviceWorker from './serviceWorker';
 import rootReducer from "./redux/reducers/reducer";
 import {ItemsFilter} from "./redux/actions/ActionTypes";
 import {womansitems} from "./resources/mockData";
-// 8
-//
+import ItemsModal from "./components/display-grid/ItemsModal";
+
 const store = createStore(rootReducer);
-// const initialState = {
-//     ItemsType: ItemsFilter.WOMAN_ITEMS,
-//     payload: womansitems
-// };
+
 ReactDOM.render(  <Provider store={store}>
     <App />
 </Provider>, document.getElementById('root'));

@@ -6,6 +6,7 @@ import Header from './components/header/Header.js';
 import Jumbo from './components/jumbotron/Jumbotron.js'
 import Navigator from './components/navigator/Navigator';
 import DisplayItems from "./components/display-grid/DisplayItems";
+import ItemsModal from "./components/display-grid/ItemsModal";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <article id="mainArticle">
             {/*<div id="inner-grid">*/}
                 <DisplayItems/>
+
             {/*</div>*/}
         </article>
 

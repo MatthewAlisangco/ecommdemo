@@ -1,4 +1,7 @@
-import React, {useRef, useEffect, useCallback} from 'react';
+
+import React, { useRef, useEffect, useCallback } from 'react';
+import connect from "react-redux/es/connect/connect";
+
 // import { useSpring, animated } from 'react-spring';
 // import styled from 'styled-components';
 // import { MdClose } from 'react-icons/md';
@@ -51,36 +54,103 @@ import React, {useRef, useEffect, useCallback} from 'react';
 //   }
 // `;
 
-const ItemModal = ({handleClose, show, children, keyz, item}) => {
-    const showHideClassName = show ? "modal display-block" : "modal display-none";
+class ItemsModal extends React.Component {
 
-    console.log("itemmodal", item, "key", keyz)
-    return (
 
-        <div className={showHideClassName}>
-            <section className="modal-main">
-                <div className="modal-card" key={keyz}>
-                    <div className="modal-img">
-                        <img className="image" src="https://via.placeholder.com/350x250" alt="placeholder"></img>
+    addCart(){
+        console.log("added" + this.props.modalitem.Title)
+        // this.props.closeItem()
+    }
+    render() {
+        const showHideClassName = this.props.modaltoggle ? "modal display-block" : "modal display-none";
+
+        if(!this.props.modalitem) {
+            return (<div className={"modal display-none"}>ss </div>
+)
+        }
+
+
+
+
+        return (
+                // const showHideClassName = show ? "modal display-block" : "modal display-none";
+            <div className={showHideClassName}>
+            <div className="modal"  onClick={() =>this.props.closeItem()}>
+                <section className="modal-main" onClick={(e) => {e.stopPropagation();
+                }}>
+
+
+                    <div>
+                        <div className="card-text">{this.props.modalitem.Brand} </div>
+                        <div className="card-text">{this.props.modalitem.Style} </div>
+                        <div className="card-text">{this.props.modalitem.Title} </div>
+                        <div className="card-text"> ${this.props.modalitem.Price} </div>
                     </div>
-                     <div className="modal-text-container">
 
-                    <div className="card-text">{item.Brand} </div>
-                    <div className="card-text">{item.Style} </div>
-                    <div className="card-text">{item.Title} </div>
-                    <div className="card-text"> ${item.Price} </div>
-                </div>
+                    <button type="button" onClick={() =>this.props.closeItem()}>
+                        Close
+                    </button>
 
-                {/*{children}*/}
-                <button type="button" onClick={handleClose}>
-                    Close
-                </button>
+                    <button type="button" onClick={() => this.addCart()}>
+                        Add Cart
+                    </button>
+                </section>
+            </div>
+        </div>)
+    }
 
-                     </div>
-            </section>
-        </div>
-    );
+}
+
+const mapStateToProps = state => {
+    return  {
+        modalitem : state.itemmodal.modalitem,
+        modaltoggle : state.itemmodal.modaltoggle
+    };
 };
+
+const mapDispatchToProps = dispatch => {
+    return {
+        closeItem: () => dispatch({type: 'CLOSE_CURRENT_ITEM', modaltoggle: null})
+    };
+};
+
+export default connect(mapStateToProps,mapDispatchToProps) (ItemsModal);
+
+// export default ItemsModal;
+// const ItemModal = ({ handleClose, show, children, keyz, item}) => {
+//     const showHideClassName = show ? "modal display-block" : "modal display-none";
+//     // const content = itemb.map((item) =>
+//     //     <div key={keyz}>
+//     //         <div>
+//     //             <div className="card-text" key={item.id}> </div>
+//     //             <div className="card-text" >{item.Brand} </div>
+//     //             <div className="card-text" >{item.Style} </div>
+//     //             <div className="card-text" >{item.Title} </div>
+//     //             <div className="card-text" > ${item.Price} </div>
+//     //         </div>
+//     //     </div>
+//     // );
+//     console.log("itemmodal" , item , "key", keyz)
+//     return (
+//
+//         <div className={showHideClassName}>
+//             <section className="modal-main">
+//                 <div key={keyz}>
+//                     <div className="card-text" >{item.Brand} </div>
+//                     <div className="card-text" >{item.Style} </div>
+//                     <div className="card-text" >{item.Title} </div>
+//                     <div className="card-text" > ${item.Price} </div>
+//                 </div>
+//
+//                 {/*{children}*/}
+//                 <button type="button" onClick={handleClose}>
+//                     Close
+//                 </button>
+//             </section>
+//         </div>
+//     );
+// };
+
 
 
 //
@@ -143,4 +213,3 @@ const ItemModal = ({handleClose, show, children, keyz, item}) => {
 //     );
 // };
 
-export default ItemModal;
