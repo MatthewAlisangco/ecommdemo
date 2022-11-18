@@ -1,5 +1,4 @@
-
-import React, { useRef, useEffect, useCallback } from 'react';
+import React, {useRef, useEffect, useCallback} from 'react';
 // import { useSpring, animated } from 'react-spring';
 // import styled from 'styled-components';
 // import { MdClose } from 'react-icons/md';
@@ -52,40 +51,36 @@ import React, { useRef, useEffect, useCallback } from 'react';
 //   }
 // `;
 
-const ItemModal = ({ handleClose, show, children, keyz, item}) => {
+const ItemModal = ({handleClose, show, children, keyz, item}) => {
     const showHideClassName = show ? "modal display-block" : "modal display-none";
-    // const content = itemb.map((item) =>
-    //     <div key={keyz}>
-    //         <div>
-    //             <div className="card-text" key={item.id}> </div>
-    //             <div className="card-text" >{item.Brand} </div>
-    //             <div className="card-text" >{item.Style} </div>
-    //             <div className="card-text" >{item.Title} </div>
-    //             <div className="card-text" > ${item.Price} </div>
-    //         </div>
-    //     </div>
-    // );
-    console.log("itemmodal" , item , "key", keyz)
+
+    console.log("itemmodal", item, "key", keyz)
     return (
 
         <div className={showHideClassName}>
             <section className="modal-main">
-                <div key={keyz}>
-                    <div className="card-text" >{item.Brand} </div>
-                    <div className="card-text" >{item.Style} </div>
-                    <div className="card-text" >{item.Title} </div>
-                    <div className="card-text" > ${item.Price} </div>
+                <div className="modal-card" key={keyz}>
+                    <div className="modal-img">
+                        <img className="image" src="https://via.placeholder.com/350x250" alt="placeholder"></img>
+                    </div>
+                     <div className="modal-text-container">
+
+                    <div className="card-text">{item.Brand} </div>
+                    <div className="card-text">{item.Style} </div>
+                    <div className="card-text">{item.Title} </div>
+                    <div className="card-text"> ${item.Price} </div>
                 </div>
 
                 {/*{children}*/}
                 <button type="button" onClick={handleClose}>
                     Close
                 </button>
+
+                     </div>
             </section>
         </div>
     );
 };
-
 
 
 //

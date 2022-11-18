@@ -13,7 +13,7 @@ function App() {
     <Header/>
        <Jumbo/>
     <Navigator/>
-        <article id="mainArticle">Article
+        <article id="mainArticle">
             {/*<div id="inner-grid">*/}
                 <DisplayItems/>
             {/*</div>*/}

@@ -62,20 +62,20 @@ class DisplayItems extends React.Component {
                 {/*    </div>*/}
 
 
-                <div>
-                    {/*<ItemsModal show={this.state.show} handleClose={this.hideModal}>*/}
-                    {/*    <p>Modal</p>*/}
-                    {/*</ItemsModal>*/}
-                    {/*<button type="button" onClick={this.showModal}>*/}
-                    {/*    Open*/}
-                    {/*</button>*/}
+                {/*<div>*/}
+                {/*    /!*<ItemsModal show={this.state.show} handleClose={this.hideModal}>*!/*/}
+                {/*    /!*    <p>Modal</p>*!/*/}
+                {/*    /!*</ItemsModal>*!/*/}
+                {/*    /!*<button type="button" onClick={this.showModal}>*!/*/}
+                {/*    /!*    Open*!/*/}
+                {/*    /!*</button>*!/*/}
 
-                </div>
+                {/*</div>*/}
 
                 {this.props.inventory.map((items, key) =>
                     <div className ="card">
                         <div className="card-img">
-                            <img className="image" src="http://placehold.it/350x250" alt="placeholder"></img>
+                            <img className="image" src="https://via.placeholder.com/350x250"alt="placeholder"></img>
                         </div>
 
                         <div className="card-text" key={key}>

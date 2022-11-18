@@ -1,27 +1,41 @@
+:root {
+    box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
 
 .app {
-  display: grid;
-
+        max-width: 1800px;
+    display: grid;
+    min-height: 0; /* NEW */
+    min-width: 0; /* NEW; needed for Firefox */
+    margin: 0 auto;
     /* grid-template [row-name]  sizes/names "grid-area -> Nth grid-area " CSSUnit(fr/px/etc)   /  column sizes */
-  grid-template:
-          [header-left] "header header header header header header " 50px [header-right]
-          [jmbo-left]   ". hdjmbo hdjmbo hdjmbo hdjmbo ." 1fr  [jmbo-right]
-          [main-left]   "nav nav article article article ." 1fr [main-right]
-          [footer-left] "footer footer footer footer footer footer" 0.2fr [footer-right]
-/ 80px 150px 1fr 1fr 1fr 80px;
-  /* grid-template */
-  /*grid-template-rows: 80px 1fr 70px;*/
-  /*grid-template-columns: 20% 1fr 15%;*/
+    grid-template:
+          [header-left] "header header   header     " 50px [header-right]
+          [jmbo-left]   "    .      hdjmbo   .     " 200px  [jmbo-right]
+          [main-left]   "nav       article    .      " 1fr [main-right]
+          [footer-left] "footer   footer          .    " 50px [footer-right]
+/                              150px 1fr;
+    /* grid-template */
+    /*grid-template-rows: 80px 1fr 70px;*/
+    /*grid-template-columns: 20% 1fr 15%;*/
     /*grid-template-rows: repeat(4, [row-start] 1fr [row-end]);*/
     /*grid-template-columns: repeat(6, [col-start] 1fr [col-end]);*/
-  grid-row-gap: 10px;
-  grid-column-gap: 10px;
-  height: 100vh;
-  margin: 0;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    height: 100vh;
+
+    /*margin: 0 auto;*/
 }
-header, footer, article, nav  {
-  padding: 1.2em;
-  background: #1B263F;
+
+header, footer, article, nav {
+    padding: 1.2em;
+    background: #1B263F;
 }
 
 header {
@@ -38,131 +52,239 @@ header {
 }
 
 #pageHeader {
-  grid-area: header;
+    grid-area: header;
 }
+
 #pageFooter {
-  grid-area: footer;
+    grid-area: footer;
 }
+
 #mainArticle {
-  grid-area: article;
+    grid-area: article;
+    /*max-width: 90%;*/
+    /*  max-width: 1800px;*/
+    /*    justify-self: center;*/
+    /*align-self: center;*/
 }
+
 #mainNav {
-  grid-area: nav;
+    grid-area: nav;
+    color: white;
 }
 
 
 #samplejumbo {
     grid-area: hdjmbo;
     background-color: lightblue;
+      /*max-width: 1600px;*/
 }
 
 /*Article grid*/
 #inner-grid {
-  display: grid;
-    /*grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); !* see notes below *!*/
-    /*grid-auto-rows: minmax(200px, auto);*/
-    /*grid-gap: 1rem;*/
+    display: grid;
+    margin: 0;
+    padding: 0;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em 1em;
+    min-height: 0;
+    /*prevent from stretching width*/
+    max-width: 0;
+    /*    grid-template-columns: fit-content(300px) fit-content(300px) fit-content(300px);*/
 
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-rows: 1fr 1fr 1fr;
-    grid-gap: 1rem;
-    min-height: 0;  /* NEW */
-    min-width: 0;   /* NEW; needed for Firefox */
+    /*grid: auto / repeat(4, 1fr);*/
+    /*grid-gap: 40px 20px;*/
 
-
-
+    /*grid-auto-flow: row;*/
+    /*grid-template-rows: repeat(auto-fill, 350px);*/
+    /*grid-auto-rows: 400px;*/
+    /*grid-auto-columns: 400px;*/
+    /* grid-auto-rows: repeat(1, minmax(350px,1fr)); */
+    /*grid-row-gap: 10px;*/
+    /*grid-column-gap: 10px;*/
+    /*min-width: 400px;   !* NEW; needed for Firefox *!*/
+    /*justify-content: space-evenly;*/
+    /*justify-items: center;*/
 
 }
 
 /*https://codepen.io/abbeyjfitzgerald/pen/QaeoYj*/
-#inner-grid > div,card  {
-  background: lightgreen;
+#inner-grid > .card {
+    /*background: lightgreen;*/
     text-align: center;
-  /*padding: 8px;*/
-    min-height: 0;  /* NEW */
-    min-width: 0;   /* NEW; needed for Firefox */
-
-    /*border: 2px solid #e7e7e7;*/
-    /*border-radius: 4px;*/
-    /*padding: .5rem;*/
-    /*-webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);*/
-    /*box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);*/
-    /*display: flex;*/
-    /*!* -webkit-box-orient: vertical; *!*/
-    /*!* -webkit-box-direction: normal; *!*/
-    /*-ms-flex-direction: column;*/
-    /*flex-direction: column;*/
-    /*position: relative;*/
-    /*color: #5d5e5e;*/
-
+    justify-items: center;
+    /*width: 400px;*/
+    /*height: 400px;*/
+    justify-self: center;
+    align-self: center;
 }
+
+
 div.image {
     /*http://via.placeholder.com/300*/
 
     /*content:url(http://placehold.it/350x250);*/
-}​
-
-
+}
 
 /*-- card section -- */
 .card {
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     justify-content: center;
-     text-align: center;
-     flex-flow: wrap;
-     flex: 0 1 24%;
-     min-width: 0;
- }
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    text-align: center;
+    /*flex-flow: wrap;*/
+    /* flex: 0 1 24%;*/
+    /*min-width: 0;*/
+}
+
+.nav-card {
+
+}
 
 
-.card > card-img, card-text {
+
+.card > .card-img, .card-text, .card-title {
     flex: 0 1 24%;
     background: lightgreen;
     text-align: center;
 }
 
-img {
-     max-width: 100%;
-     max-height: 100%;
-     /*display: block; !* remove extra space below image *!*/
+ .card-img {
+     height :300px;
+     background-size: cover;
+     background-position:center;
  }
+
+  .card-title {
+
+ }
+
+ .card-text{
+
+ }
+
+
+
+ .modal-card {
+    /* display: flex;*/
+    /*flex-direction: row;*/
+ }
+
+ .modal-img{
+     order:1;
+     height :300px;
+     background-size: cover;
+     background-position:center;
+
+ }
+
+ .modal-content{
+     order:2;
+ }
+/*img {*/
+/*    max-width: 100%;*/
+/*    max-height: 100%;*/
+/*    !*display: block; !* remove extra space below image *!*!*/
+/*}*/
 
 div.banner {
-     content:url(http://placehold.it/750x250);
- }
-
-
+    content: url(http://placehold.it/750x250);
+}
 
 
 /*footer grid*/
 #footer-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 10px;
+    display: flex; /* or inline-flex */
+    flex-direction: row
+    /* grid-gap: 10px; */
 }
+
 #footer-grid > div {
-  background: lightgreen;
-  padding: 8px;
+    background: lightgreen;
+    padding: 8px;
 }
 
 
-
-
-
-
-@media all and (max-width: 575px) {
-  /*body {*/
+@media all and (max-width: 875px) {
+    /*body {*/
     /*background-color: red;*/
-  /*}*/
+    /*}*/
+    .app {
+        grid-template-areas: "header"  "nav" "article" "footer";
+        /*grid-template-rows: 80px 1fr 70px 1fr 70px;*/
+        grid-template-columns: 1fr;
+    }
 
+    #mainArticle {
+    grid-area: article;
+    max-width: 100%;
+}
+    #inner-grid {
+        display: grid;
+        grid-template-columns: repeat(2, fit-content(300px));
+        grid-template-rows: minmax(200px, 1fr);
+        /* grid-auto-rows: repeat(1, minmax(350px,1fr)); */
+        grid-gap: 1em 1em;
+        min-height: 0; /* NEW */
+        min-width: 0; /* NEW; needed for Firefox */
+        /*justify-content: space-evenly;*/
+        /*justify-items: center;*/
+        /* width: 400px;*/
+        /* height: 400px;*/
+    }
 
-  .app {
-    grid-template-areas: "header" "article" "nav" "footer";
-    /*grid-template-rows: 80px 1fr 70px 1fr 70px;*/
-    grid-template-columns: 1fr;
-  }
+    #footer-grid {
 
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+    }
 
 }
+
+
+/*    @media all and (min-width: 1200px)  {*/
+/*.app {*/
+/*      !*width: 1200px;*!*/
+/*  !*height: 800px;*!*/
+/*  display: grid;*/
+
+/*    !* grid-template [row-name]  sizes/names "grid-area -> Nth grid-area " CSSUnit(fr/px/etc)   /  column sizes *!*/
+/*  grid-template:*/
+/*          [header-left] "header header  header header      header " 50px [header-right]*/
+/*          [jmbo-left]   "    .      hdjmbo  hdjmbo hdjmbo   .  " 200px  [jmbo-right]*/
+/*          [main-left]   "nav       article  article  article     . " 1fr [main-right]*/
+/*          [footer-left] "footer   footer        footer  footer      footer " 50px [footer-right]*/
+/*/                              150px 1fr 1fr  1fr 150px;*/
+/*  !* grid-template *!*/
+/*  !*grid-template-rows: 80px 1fr 70px;*!*/
+/*  !*grid-template-columns: 20% 1fr 15%;*!*/
+/*    !*grid-template-rows: repeat(4, [row-start] 1fr [row-end]);*!*/
+/*    !*grid-template-columns: repeat(6, [col-start] 1fr [col-end]);*!*/
+/*  grid-row-gap: 10px;*/
+/*  grid-column-gap: 10px;*/
+/*  height: 100vh;*/
+/*  margin: 0 auto;*/
+/*}*/
+/*    #inner-grid {*/
+/*        display: grid;*/
+/*          grid-template-columns: repeat(3, minmax(150px,300px));*/
+/*          grid-template-rows: minmax(200px, 1fr);*/
+/*          !* grid-auto-rows: repeat(1, minmax(350px,1fr)); *!*/
+/*          grid-gap: 1em;*/
+/*          grid-row-gap: 10px;*/
+/*          grid-column-gap: 10px;*/
+/*          min-height: 0;  !* NEW *!*/
+/*          min-width: 0;   !* NEW; needed for Firefox *!*/
+/*          justify-content: space-evenly;*/
+/*          justify-items: center;*/
+/*          !* width: 400px; *!*/
+/*          !* height: 400px; *!*/
+/*      }*/
+
+/*    #footer-grid {*/
+
+/*      grid-template-columns: 1fr;*/
+/*      grid-gap: 10px;*/
+/*    }*/
+
+/*}*/

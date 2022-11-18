@@ -57,7 +57,7 @@ class Navigator extends React.Component {
             <nav id="mainNav">Nav
                 <li> Brand</li>
                 {brandsSet.map(brandName =>
-                    <div className ="card">
+                    <div className ="nav-card">
                         <input
                             name="isGoing"
                             type="checkbox"
